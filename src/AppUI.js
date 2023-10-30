@@ -10,6 +10,7 @@ import React from 'react';
 import { Modal } from './pages/Modal';
 import styled from 'styled-components';
 import { TodoForm } from './pages/TodoForm'
+
 const SBContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -40,7 +41,6 @@ function AppUI(){
                 />
             </SBContainer>
                     <TodoList> 
-                        </TodoList>
                         {loading && <TodoLoading/>}                
                         {error && <p>Desésperate, hubo un error!!</p>}
                         {!loading && searchedTodos.length === 0 
@@ -55,6 +55,7 @@ function AppUI(){
                             onDelete = {() => deleteTodo(todo.text)}
                         />
                         ))}
+                    </TodoList>
 
                     {openModal && (
                         <Modal>
